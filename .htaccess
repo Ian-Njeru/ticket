@@ -1,0 +1,21 @@
+# mod_rewrite starts here
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} ^/ticket/admin/?$ [NC] #sets the conditions that the user given uri is met before rewriting
+
+RewriteRule ^(.*)$ /ticket/admin/login [R=301,L] #R[redirect] flag, L[last] rule
+
+RewriteCond %{REQUEST_URI} ^/ticket/user/?$ [NC] #NC[No case] flag is case-sensitive matching i.e. /ticket/user/ and /TICKET/USER/ is the same
+
+RewriteRule ^(.*)$ /ticket/user/index [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^(.*)$ $1.php
+
+RewriteCond %{REQUEST_URI} ^/?$ [NC]
+
+

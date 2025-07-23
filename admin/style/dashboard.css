@@ -1,0 +1,91 @@
+.dashboard {  
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.body{
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 50px;
+    display:flex;
+    flex-wrap: wrap;
+    flex: 80%;
+}
+
+.user{
+    
+}
+
+.body-section, .user{
+    max-width: 65%;
+    flex: 65%;
+    
+}
+
+.side-section{
+    /**/margin-top: 0px;
+    padding-left: 10px;
+    padding-right: 20px;
+    max-width: 40%;
+    flex: 35%;
+}
+.calendar{
+   
+}
+.user{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sidebar, .body{   
+    flex-direction: column;
+}
+
+.body.body-section, .body.side-section{
+    flex-direction: column;
+}
+
+
+
+.your-tickets, .all-tickets, .my-tickets, .calendar{
+    background-color: rgba(225, 240, 237, 0.26);
+    border-radius: 10px;
+    /*padding: 10px 10px;*/
+}
+
+.your-tickets,.my-tickets{
+    /*border-bottom: 1px solid rgba(0,0,0,0.1);
+    */margin-bottom:25px;
+}
+
+.title{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+table.display, table#calendar{
+    max-width: 100dvw;
+   /*border: 1px solid rgba(0, 0, 0, 0.4);*/
+    text-align: left;
+    margin-top: 10px;
+    border-radius: 10px;
+    /**/padding: 10px;
+}
+
+th{
+    width: 100em;
+    color: #000000;
+    /*border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    padding-bottom: 10px;*/
+}
+
+.ticket-container, .calendar-container{
+    background-color: rgba(225, 240, 237, 0.63);
+   
+    border-radius: 15px;
+}
