@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "./autoload/autoloader.php";
+    include "./../autoload/autoloader.php";
 
     if($_SERVER['REQUEST_METHOD']=='POST'){
 

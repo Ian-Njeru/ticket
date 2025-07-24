@@ -1,3 +1,6 @@
+<?php
+     include "././controller/auth.controller.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,6 +70,13 @@
     </style>
 </head>
 <body>
+<?php
+    $error = $_SESSION['error']??'';
+    unset($_SESSION['error']);
+        if($error){
+            echo htmlspecialchars($error);
+        }
+?>
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post">
         
         <div>

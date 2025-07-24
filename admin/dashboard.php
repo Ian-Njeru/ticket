@@ -1,5 +1,5 @@
 <?php
-    include "session/session_start.php";
+    include "./../session/session_start.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
