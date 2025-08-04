@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="btn-logout"><button class="logout"><a href="logout.php">Logout</a></button></div>
+    <?php include "sidenav.php";?>
+    <!--<div class="btn-logout"><button class="logout"><a href="logout.php">Logout</a></button></div>-->
 </body>
 </html>
