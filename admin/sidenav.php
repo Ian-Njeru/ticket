@@ -24,7 +24,7 @@
                 <div class="dashboard-name">Calendar</div>
             </a>
             <a href="" class="navigation">
-                <div class="icon"><i class="fa-history"></i></div>
+                <div class="icon"><i class="fa fa-clock-rotate-left"></i></div>
                 <div class="dashboard-name">Activity</div>
             </a>
     </div>
