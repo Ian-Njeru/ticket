@@ -1,0 +1,93 @@
+.profile{ 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-details{
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 25px;
+    display:flex;
+    flex-direction: column;
+    flex: 80%;
+}
+
+form {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.person-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.person-name, .phone{
+    margin:10px  0px;
+    padding: 10px;
+}
+
+.firstname, .lastname, .phone{
+    width: 50%;
+}
+
+
+input[type="text"], input[type="tel"]{
+   padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 90%;
+    background-color: #f2f2f2;
+}
+
+input[type="text"]:focus, input[type="tel"]:focus{
+    border: 1px solid #000;
+    outline: none;
+}
+
+.save, .edit{
+    width: 20%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px  10px;
+}
+
+.save{
+    background-color: #4f8cff;
+}
+
+.edit{
+    background-color: #ffc24f;
+}
+
+#save, #edit{
+    color: #fff;
+}
+
+.delete{
+    background-color: #ff4d4d;
+    width: 20%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px  10px;
+}
+
+#deleteAccount{
+    color: #fff;
+}
+
+.status{
+    background-color: #f4dcdb;
+    color: #c25d65;
+    border-radius: 25px;
+    text-align: center;
+    padding: 5px;
+}
