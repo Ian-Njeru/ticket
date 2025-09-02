@@ -25,7 +25,20 @@ class profile extends connection {
         }
     }
 
-    public function updatePersonalDetails(){
+   public function updatePersonalDetails($firstname, $lastname, $phone, $id){
+        $stmt = "UPDATE customer_profile SET first_name = '$firstname', last_name = '$lastname', contact = '$phone' WHERE id = '$id'";
+        $query = $this->connection->query($stmt);
+        if($query == true){
+            return[
+                'status'=> true,
+                'success' => 'Record Updated Successfully'
+            ];
+        }else{
+            return [
+                'status'=> false,
+                'failed'=>'Failed to update record'
+            ];
+        }
 
     }
 
