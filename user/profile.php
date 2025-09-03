@@ -10,6 +10,7 @@
     <title>Profile | Ticket</title>
     <script src="js/jquery-3.7.1.js"></script>
     <script src="js/pathname.js"></script>
+    <script src="js/modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.7.0/build/js/intlTelInput.min.js"></script>
     <script src="https://cdn.datatables.net/2.3.3/js/dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="style\global.css">
     <link rel="stylesheet" href="style\sidenav.css">
     <link rel="stylesheet" href="style\profile.css">
+    <link rel="stylesheet" href="style\modal.css">
 </head>
 <body>
 <div class="profile"> 
@@ -75,6 +77,7 @@
             <form action="" id="accountOverview">
                 <h3>Account overview</h3>
                 <table class="accountOverview">
+                    
                     <thead>
                         <tr>
                             <th>Email</th>
@@ -88,7 +91,29 @@
                             <td><?php echo $email; ?></td>
                             <td><?php echo $password;?></td>
                             <td><div class="status"><?php echo $status;?></div></td>
-                            <td><i class="fa fa-cog"></i></td>
+                            <td><i class="fa fa-cog" id="action"></i>
+                                <div class="actionModal">
+                                    <div class="action">
+                                        <div id="close_modal">
+                                            <span class="close_modal">&times;</span>
+                                        </div>
+
+                                        <div class="header">
+                                            <h2>Select Action to do</h2>
+                                        </div>
+
+                                        <div class="body">
+                                            <input type="radio" name="change" value="email">
+                                            <label for="email">Email</label>
+                                            <br><br>
+
+                                            <input type="radio" name="change" value="password">
+                                            <label for="password">Password</label>
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -138,6 +163,10 @@
             });
             
         })
+
+        
+
+
     })
 </script>
 </body>
