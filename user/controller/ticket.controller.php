@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include "./../autoload/autoloader.php";
     $tickets = new ticket();
 

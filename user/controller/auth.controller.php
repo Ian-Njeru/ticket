@@ -8,8 +8,8 @@
         $result = $auth->user($_POST['username'], $_POST['password']);
 
         if($result['status']){
-                $username = $_SESSION[$result['name']];
-                $_SESSION['user_id'] = $result['user'];
+                $_SESSION['username'] = $result['name'];
+                $_SESSION['user_id'] = $result['user_id'];
                header('location:home');
                 
         }else{

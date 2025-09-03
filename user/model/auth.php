@@ -7,7 +7,7 @@ include "../db/connection.php";
         }
 
         public function user($username, $password){
-            $stmt = "SELECT * FROM customer WHERE (name = '$username' OR email = '$username')
+            $stmt = "SELECT * FROM customer_login WHERE (name = '$username' OR email = '$username')
              AND password = '$password'";
 
             $query = $this->connection->query($stmt);
@@ -19,7 +19,7 @@ include "../db/connection.php";
                     return 
                     [
                         'status'=>true,
-                        'user'=>$user_id,
+                        'user_id'=>$user_id,
                         'name'=>$name
                     ];
             

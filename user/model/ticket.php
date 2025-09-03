@@ -7,7 +7,7 @@
 
         public function ticket($subject, $description, $images){
 
-            $sql = "INSERT INTO ticket (title, description, image) VALUES ('$subject', '$description', '$images')";
+            $sql = "INSERT INTO ticket (title, description, image, created_on) VALUES ('$subject', '$description', '$images', now())";
 
             $stmt = $this->connection->query($sql);
 
