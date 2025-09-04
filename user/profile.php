@@ -103,12 +103,20 @@
                                         </div>
 
                                         <div class="body">
-                                            <input type="radio" name="change" value="email">
-                                            <label for="email">Email</label>
+                                            <input type="radio" name="change" value="email" class="changeEmail">
+                                            <label for="email">Change Email</label>
                                             <br><br>
+                                                <div id="changeEmail">
+                                                    <label for="email">Change Email</label>
+                                                    <input type="email" name="email" id=""><br>
+                                                        <div id="buttons">
+                                                            <button class="submit" type="submit" name="submit">Submit</button>
+                                                            <button class="reset" type="reset">Reset</button>
+                                                        </div>
+                                                </div>
 
-                                            <input type="radio" name="change" value="password">
-                                            <label for="password">Password</label>
+                                            <input type="radio" name="change" value="password" class="changePassword">
+                                            <label for="password">Change Password</label>
                                             <br><br>
                                         </div>
                                     </div>
@@ -162,8 +170,18 @@
                 "background-color":"#fff"
             });
             
-        })
+        });
 
+        /*$('input[type="change"]').change(function(){
+            var selectedValue = $(this).val();
+            var selectedClass = $(this).attr('class');
+
+            console.log("Selected Class: " + selectedClass);
+
+            if(selectedClass == 'changeEmail'){
+                $('#changeEmail').show();
+            }
+        });*/
         
 
 
