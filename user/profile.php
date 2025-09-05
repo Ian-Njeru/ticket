@@ -111,13 +111,22 @@
                                                     <input type="email" name="email" id=""><br>
                                                         <div id="buttons">
                                                             <button class="submit" type="submit" name="submit">Submit</button>
-                                                            <button class="reset" type="reset">Reset</button>
+                                                            <button class="reset" type="reset">Cancel</button>
                                                         </div>
                                                 </div>
 
                                             <input type="radio" name="change" value="password" class="changePassword">
                                             <label for="password">Change Password</label>
                                             <br><br>
+                                                <div id="changePassword">
+                                                        <label for="password">Change Password</label>
+                                                        <input type="password" name="password" placeholder = "New Password" id=""><br>
+                                                        <input type="password" name="confirmPassword" placeholder = "Confirm password"><br>
+                                                            <div id="buttons">
+                                                                <button class="submit" type="submit" name="submit">Submit</button>
+                                                                <button class="reset" type="reset">Cancel</button>
+                                                            </div>
+                                                    </div>
                                         </div>
                                     </div>
                                 </div>
@@ -172,20 +181,34 @@
             
         });
 
-        /*$('input[type="change"]').change(function(){
+        /**/$('input[type="radio"]').change(function(){
             var selectedValue = $(this).val();
             var selectedClass = $(this).attr('class');
 
-            console.log("Selected Class: " + selectedClass);
+            console.log("."+selectedClass+"");
 
-            if(selectedClass == 'changeEmail'){
+            if(selectedClass === 'changeEmail'){
                 $('#changeEmail').show();
+                $('#changePassword').hide();
+                $('.reset').click(function(){
+                    $("input[type='email']").val('');
+                    $('#changeEmail').hide();
+                });
+            }else{
+                $('#changePassword').show();
+                $('#changeEmail').hide();
+                $('.reset').click(function(){
+                    $("input[type='password']").val('');
+                    $('#changePassword').hide();
+                });
             }
-        });*/
+
+            
+        });
         
 
 
-    })
+    });
 </script>
 </body>
 </html>
