@@ -35,4 +35,15 @@ $accountOverview = $profile->accountOverview($id);
     $status = $accountOverview['status'];
 
 
+    if(isset($_POST['changeEmail'])){
+        $email = $_POST['email'];
+        $changeEmail = $profile->changeEmail($id, $email);
+        if($changeEmail == true){
+            $_SESSION['success'] = $changeEmail['success'];
+            
+        }else{
+            $_SESSION['failed'] = $changeEmail['failed'];
+            
+        }
+    }
 ?>
