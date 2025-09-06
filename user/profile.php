@@ -140,7 +140,7 @@
             
             <form action="" method="post">
                 <h3>Delete Account</h3>
-                <div class="delete"><button id="deleteAccount" name="deleteAccount">Delete Account</button></div>
+                <div class="delete"><input type="button" id="deleteAccount" name="deleteAccount" value='Delete Account'></div>
             </form>
         </div>
     </div>
@@ -181,7 +181,7 @@
             
         });
 
-        /**/$('input[type="radio"]').change(function(){
+        $('input[type="radio"]').change(function(){
             var selectedValue = $(this).val();
             var selectedClass = $(this).attr('class');
 
@@ -206,6 +206,28 @@
             
         });
         
+
+       $('#deleteAccount').click(function(){
+            swal.fire({
+                title: "<b>Do you want to delete your account?</b>",
+                icon: "warning",
+                text: "You won't be able to revert this",
+                showCancelButton: true,
+                confirmButtonColor: "#4f8cff",
+                cancelButtonColor: "#ff4d4d",
+                confirmButtonText: "Yes, delete my account."
+
+            }).then((result)=>{
+            if(result.isConfirmed){
+                swal.fire({
+                    title: "You have deleted your account!",
+                    text: "You will receie an email recognizing your deleted account.",
+                    icon: "Success",
+                    timer: 10000
+                });
+            }
+        });
+       });
 
 
     });

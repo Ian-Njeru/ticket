@@ -71,17 +71,16 @@ input[type="text"]:focus, input[type="tel"]:focus{
     color: #fff;
 }
 
-.delete{
+
+#deleteAccount{
+    color: #fff;
     background-color: #ff4d4d;
     width: 20%;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
     margin: 10px  10px;
-}
-
-#deleteAccount{
-    color: #fff;
+    border: none;
 }
 
 .status{

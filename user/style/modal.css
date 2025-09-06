@@ -17,7 +17,7 @@
   width: 50%;
 }
 input[type=radio] {
-  width: 50%;
+  width: 10%;
   padding: 10px;
 }
 #buttons{
@@ -80,7 +80,7 @@ h2 {
 
 #changeEmail label, input[type='email'], #changePassword label, input[type='password']{
   text-align: center;
-  margin: 20px;
+  width: 50%;
 }
 
 input[type='email'], input[type='password']{
@@ -89,4 +89,8 @@ input[type='email'], input[type='password']{
     border-radius: 5px;
     width: 90%;
     background-color: #fff;
+}
+
+.header{
+  padding-top: 20px;
 }
