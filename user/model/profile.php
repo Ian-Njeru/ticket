@@ -60,6 +60,27 @@ class profile extends connection {
         }
     }
 
+    public function changeEmail($id, $email){
+        $stmt = "UPDATE customer_login,customer_profile SET customer_login.email='$email',customer_profile.email='$email' WHERE customer_profile.id =$id AND customer_profile.id=$id";
+        $query = $this->connection->query($stmt);
+
+        if($query == true){
+            return[
+                'status'=> true,
+                'success' => 'Email Updated Successfully.'
+            ];
+        }else{
+            return [
+                'status'=> false,
+                'failed'=>'Failed to update email.'
+            ];
+        }
+    }
+
+    public function changePassword($id, $password){
+
+    }
+
     public function delete(){
 
     }
