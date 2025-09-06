@@ -121,7 +121,7 @@
                                                 <div id="changePassword">
                                                         <label for="password">Change Password</label>
                                                         <input type="password" name="password" placeholder = "New Password" id=""><br>
-                                                        <input type="password" name="confirmPassword" placeholder = "Confirm password"><br>
+                                                        <input type="password" name="confirmPassword" placeholder = "Confirm password"><br> 
                                                             <div id="buttons">
                                                                 <button class="submit" type="submit" name="submit">Submit</button>
                                                                 <button class="reset" type="reset">Cancel</button>
