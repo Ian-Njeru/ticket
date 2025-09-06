@@ -222,7 +222,7 @@
                 swal.fire({
                     title: "You have deleted your account!",
                     text: "You will receie an email recognizing your deleted account.",
-                    icon: "Success",
+                    icon: "success",
                     timer: 10000
                 });
             }
