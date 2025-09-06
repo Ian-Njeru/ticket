@@ -34,7 +34,9 @@
                                     title: "Success",
                                     text: "'.$success.'",
                                     icon: "success"
-                                });
+                                }).then((result)=>{
+                                    window.location.href = "./open-ticket";
+                                    });
                         </script>';
                 }else{
                     echo htmlspecialchars($error);
