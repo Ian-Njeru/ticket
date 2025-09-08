@@ -46,4 +46,14 @@ $accountOverview = $profile->accountOverview($id);
             
         }
     }
+
+if(isset($_POST['changePassword'])){
+    $password = $_POST['password'];
+    $changePassword = $profile->changePassword($id, $password);
+    if($changePassword == true){
+        $_SESSION['success'] = $changePassword['success'];
+    }else{
+        $_SESSION['success'] = $changePassword['success'];
+    }
+}
 ?>

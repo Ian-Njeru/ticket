@@ -78,7 +78,20 @@ class profile extends connection {
     }
 
     public function changePassword($id, $password){
+        $stmt = "UPDATE customer_login SET password='$password' WHERE id =$id ";
+        $query = $this->connection->query($stmt);
 
+        if($query == true){
+            return[
+                'status'=> true,
+                'success' => 'Password Changed Successfully.'
+            ];
+        }else{
+            return [
+                'status'=> false,
+                'failed'=>'Failed to change Password.'
+            ];
+        }
     }
 
     public function delete(){
