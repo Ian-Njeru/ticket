@@ -123,8 +123,12 @@
                                             <br><br>
                                                 <div id="changePassword">
                                                         <label for="password">Change Password</label>
-                                                        <input type="password" name="password" placeholder = "New Password" id=""><br>
-                                                        <input type="password" name="confirmPassword" placeholder = "Confirm password"><br> 
+                                                        <input type="password" name="password" placeholder = "New Password" id="newPassword"><br>
+                                                        <input type="password" name="confirmPassword" placeholder = "Confirm password" id="confrimPassword"><br> 
+
+                                                        <div class="showpassword">
+                                                            <input type="checkbox" name="showPasswprd" id="">Show Password
+                                                        </div>
                                                             <div id="buttons">
                                                                 <button class="submit" type="submit" name="changePassword">change Password</button>
                                                                 <button class="reset" type="reset">Cancel</button>
@@ -232,7 +236,21 @@
         });
        });
 
-
+       
+       $('input[type="checkbox"]').change(function(){
+        var getCheckboxType = $(this).prop('type');
+        
+            var newPass = $("#newPassword").prop('type');
+            var confirmPass = $("#confrimPassword").prop('type'); 
+            
+            if(newPass && confirmPass  === 'password'){
+                $("#newPassword").prop('type','text');
+                $("#confrimPassword").prop('type', 'text');
+            }else{
+                $("#newPassword").prop('type','password');
+                $("#confrimPassword").prop('type', 'password');
+            }
+       });
     });
 </script>
 </body>

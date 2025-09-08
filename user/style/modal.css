@@ -91,6 +91,9 @@ input[type='email'], input[type='password']{
     background-color: #fff;
 }
 
+input[type="password"]{
+  margin: 10px;
+}
 .header{
   padding-top: 20px;
 }
