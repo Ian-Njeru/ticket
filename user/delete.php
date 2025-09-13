@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    DELETED
+<?php
+    include "./../session/session_destroy.php";
+    ECHO "DELETED";
+?>
 </body>
 </html>
