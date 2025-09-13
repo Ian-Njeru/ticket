@@ -145,9 +145,9 @@
         </div>
         <div class="delete-account">
             
-            <form action="" method="post">
+            <form action="" method="post" class="deleteAccount">
                 <h3>Delete Account</h3>
-                <div class="delete"><input type="button" id="deleteAccount" name="deleteAccount" value='Delete Account'></div>
+                <div class="delete"><button type="submit" id="deleteAccount" name="deleteAccount" value='Delete Account'>Delete Account</button></div>
             </form>
         </div>
     </div>
@@ -214,7 +214,8 @@
         });
         
 
-       $('#deleteAccount').click(function(){
+       $('.deleteAccount').on('submit',function(event){
+        event.preventDefault();
             swal.fire({
                 title: "<b>Do you want to delete your account?</b>",
                 icon: "warning",
@@ -225,15 +226,32 @@
                 confirmButtonText: "Yes, delete my account."
 
             }).then((result)=>{
+                
             if(result.isConfirmed){
-                swal.fire({
-                    title: "You have deleted your account!",
-                    text: "You will receie an email recognizing your deleted account.",
-                    icon: "success",
-                    timer: 10000
-                });
+                
+                $.ajax({
+                    type: "POST",
+                    url: "./profile",
+                    data:{
+                        online_status: "deleted",
+                    },
+                    success:function(response){
+                            swal.fire({
+                                title: "You have deleted your account!",
+                                text: "You will receie an email recognizing your deleted account.",
+                                icon: "success",
+                                timer: 10000
+                            });
+                            window.location.href = './delete.php';
+                    }
+
+                    
+
+                }); 
+                
+                                    
             }
-        });
+        });       
        });
 
        

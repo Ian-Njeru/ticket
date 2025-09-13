@@ -94,8 +94,15 @@ class profile extends connection {
         }
     }
 
-    public function delete(){
+    public function delete($id, $onlineStatus){
+        $stmt = "UPDATE customer_login, customer_profile SET customer_login.online_status = '$onlineStatus', customer_profile.online_status = '$onlineStatus' WHERE customer_profile.id =$id AND customer_profile.id=$id";
+        $query = $this->connection->query($stmt);
 
+        if($query == true){
+            return[
+                'status'=>true
+            ];
+        }
     }
 }
 
