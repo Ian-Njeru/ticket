@@ -70,19 +70,25 @@
         input[type="submit"]:hover {
             background: #2563eb;
         }
-    
+        
+        .error{
+            background-color: #f4dcdb;
+            border-left: 5px solid #ff4d4d;
+            padding: 20px;
+            color: #ff4d4d;
+        }
     </style>
 </head>
 <body>
-<?php
-    $error = $_SESSION['error']??'';
-    unset($_SESSION['error']);
-        if($error){
-            echo htmlspecialchars($error);
-        }
-?>
+
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post">
-        
+        <?php
+            $error = $_SESSION['error']??'';
+            unset($_SESSION['error']);
+                if($error){
+                    echo "<p class = 'error'>".htmlspecialchars($error)."</p>";
+                }
+        ?>
         <div class="form">
             <div class="name"><p>Ticketer</p></div>
             <div class="input">
