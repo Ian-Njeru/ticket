@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.7.0/build/css/intlTelInput.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.3/css/dataTables.dataTables.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style\global.css">
     <link rel="stylesheet" href="style\sidenav.css">
     <link rel="stylesheet" href="style\profile.css">
@@ -145,9 +144,11 @@
         </div>
         <div class="delete-account">
             
-            <form action="" method="post" class="deleteAccount">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" class="deleteAccount">
                 <h3>Delete Account</h3>
-                <div class="delete"><button type="submit" id="deleteAccount" name="deleteAccount" value='Delete Account'>Delete Account</button></div>
+                <div class="delete">
+                    <input type="hidden" value="deleted" name="online_status">
+                    <button type="submit" id="deleteAccount" name="deletedAccount" value='deleted'>Delete Account</button></div>
             </form>
         </div>
     </div>
@@ -180,11 +181,14 @@
     $(document).ready(function(){
         $('.edit').click(function(){
             $('.edit').hide();
-            $('.save').show();
+            
 
             $('input[type=text], input[type=tel]').prop('disabled', false).css({
                 "background-color":"#fff"
             });
+
+            $('.save').show();
+            
             
         });
 
@@ -216,6 +220,7 @@
 
        $('.deleteAccount').on('submit',function(event){
         event.preventDefault();
+        var formData = $(this).serialize();
             swal.fire({
                 title: "<b>Do you want to delete your account?</b>",
                 icon: "warning",
@@ -232,9 +237,11 @@
                 $.ajax({
                     type: "POST",
                     url: "./profile",
-                    data:{
+                    /*data:{
                         online_status: "deleted",
-                    },
+                    },*/
+                    data: formData,
+                    
                     success:function(response){
                             swal.fire({
                                 title: "You have deleted your account!",
@@ -243,6 +250,7 @@
                                 timer: 10000
                             });
                             window.location.href = './delete.php';
+                            
                     }
 
                     

@@ -57,8 +57,8 @@ if(isset($_POST['changePassword'])){
     }
 }
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $onlineStatus = 'deleted';
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['online_status'])){
+    $onlineStatus = $_POST['online_status'];
     $delete = $profile->delete($id, $onlineStatus);
     
 }
