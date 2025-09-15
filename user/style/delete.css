@@ -1,0 +1,40 @@
+
+.deleted-success-message{
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 50px;
+  max-height: 100vh;
+  box-shadow: 10px 20px 5px #5777a8;
+}
+
+.header{
+ padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+.icon{
+  font-size: 100px;
+  color: #ff4d4d;
+}
+
+.title{
+  font-size: 50px;
+  border-bottom: 1px solid #000;
+}
+
+.par{
+  font-size: 30px;
+  padding: 50px;
+  text-align: center;
+}
+
+.bar{
+  background:rgba(226, 223, 223, 0.603);
+  height: 100px;
+}
+
+.bar img{
+  height: 70px;
+  margin: 15px;
+}
