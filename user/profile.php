@@ -243,12 +243,6 @@
                     data: formData,
                     
                     success:function(response){
-                            swal.fire({
-                                title: "You have deleted your account!",
-                                text: "You will receie an email recognizing your deleted account.",
-                                icon: "success",
-                                timer: 10000
-                            });
                             window.location.href = './delete.php';
                             
                     }
