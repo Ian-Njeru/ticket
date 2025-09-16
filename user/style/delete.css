@@ -2,7 +2,7 @@
 .deleted-success-message{
   background-color: #fff;
   border-radius: 10px;
-  margin: 50px;
+  margin: 50px 150px;
   max-height: 100vh;
   box-shadow: 10px 20px 5px #5777a8;
 }
