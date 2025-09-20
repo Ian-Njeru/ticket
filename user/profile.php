@@ -92,7 +92,7 @@
                         <tr>
                             <td><?php echo $email; ?></td>
                             <td><?php echo $password;?></td>
-                            <td><div class="status"><?php echo $status;?></div></td>
+                            <td><div class="status"><input type="submit" value="<?php echo $status;?>" name="verify" class="verify"></div></td>
                             <td><i class="fa fa-cog" id="action"></i>
                                 <div class="actionModal">
                                     <div class="action">
