@@ -94,6 +94,18 @@ class profile extends connection {
         }
     }
 
+    public function emailVerification($id, $verification_code){
+        $stmt = "UPDATE customer_login SET verification_code = '$verification_code' WHERE id = $id";
+        $query = $this->connection->query($stmt);
+
+        if($query == true){
+            return [
+                'status'=>true,
+                'success' => 'We have sent you a verification email. Please check your inbox (or spam folder) and click on the link to activate your account.'
+            ];
+        }
+    }
+
     public function delete($id, $onlineStatus){
         $stmt = "UPDATE customer_login SET customer_login.online_status = '$onlineStatus' WHERE customer_login.id =$id ";
         $query = $this->connection->query($stmt);
