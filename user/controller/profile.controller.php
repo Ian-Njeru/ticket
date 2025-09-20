@@ -57,6 +57,19 @@ if(isset($_POST['changePassword'])){
     }
 }
 
+
+if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['verify'])){
+    $verification_code = 'T-'.rand(0, 1000000);
+    $emailVerification = $profile->emailVerification($id, $verification_code);
+
+    if($emailVerification == true){
+        $_SESSION['success'] = $emailVerification['success'];
+        header('location: email-verification.php');
+    }else{
+        $_SESSION['failed'] = $emailVerification['failed'];
+    }
+}
+
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['online_status'])){
     $onlineStatus = $_POST['online_status'];
     $delete = $profile->delete($id, $onlineStatus);
