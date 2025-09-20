@@ -18,4 +18,4 @@ RewriteRule ^(.*)$ $1.php
 
 RewriteCond %{REQUEST_URI} ^/?$ [NC]
 
-
+AddType application/x-httpd-php .htm .html
