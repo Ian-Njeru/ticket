@@ -11,8 +11,9 @@
 <body>
 
 <?php
-
 require_once "./../vendor/autoload.php";
+include "./../session/session_start.php";
+include "././controller/verification.controller.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -30,7 +31,10 @@ try {
          // issue a detailed log
        // $mail->SMTPDebug = SMTP::DEBUG_SERVER; 
     //}
+    $name = $name;
+    $code = $verification_code;
     // Authentication with SMTP
+
     $mail-> isSMTP();
     $mail->SMTPAuth = true;
     // Login
@@ -40,13 +44,16 @@ try {
     $mail->Password = $_ENV['MAIL_PASSWORD'];
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->setFrom('testprojectmaktaba@gmail.com', 'Ticket');
-    $mail->addAddress('ianjeru020@gmail.com', 'Ian');
+    $mail->addAddress($email, $name);
     //$mail-> addAttachment($img, "image.jpg");
     $mail->CharSet = 'UTF-8';
     $mail->Encoding = 'base64';
     $mail->isHTML(true);
     $mail->Subject = 'The subject of your mail';
-    $mail->Body = 'The mail text in HTML content. <b>bold</b> elements are allowed.';
+    ob_start(); 
+    include __DIR__.'/email-template.htm';
+    $htmlBody = ob_get_clean();
+    $mail->Body = $htmlBody;
     $mail->AltBody = 'The text as a simple text element';
     $mail->send();
 } catch (Exception $e) {
