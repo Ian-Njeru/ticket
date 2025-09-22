@@ -13,7 +13,7 @@
 <?php
 require_once "./../vendor/autoload.php";
 include "./../session/session_start.php";
-include "././controller/verification.controller.php";
+include "././controller/profile.controller.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -21,7 +21,6 @@ use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
-//$img = include_once "img/image.jpg";
 // Enable or disable exceptions via variable
 $debug = true;
 try {
@@ -43,7 +42,7 @@ try {
     $mail->Username = $_ENV['MAIL_USERNAME'];
     $mail->Password = $_ENV['MAIL_PASSWORD'];
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->setFrom('testprojectmaktaba@gmail.com', 'Ticket');
+    $mail->setFrom($_ENV['MAIL_USERNAME'], 'Ticket');
     $mail->addAddress($email, $name);
     //$mail-> addAttachment($img, "image.jpg");
     $mail->CharSet = 'UTF-8';
