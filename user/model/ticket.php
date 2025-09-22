@@ -5,9 +5,9 @@
             parent::__construct();
         }
 
-        public function ticket($subject, $description, $images){
+        public function ticket($subject, $description, $images, $created_by){
 
-            $sql = "INSERT INTO ticket (title, description, image, created_on) VALUES ('$subject', '$description', '$images', now())";
+            $sql = "INSERT INTO ticket (title, description, image, created_on, created_by, status) VALUES ('$subject', '$description', '$images', now(), $created_by, 'new')";
 
             $stmt = $this->connection->query($sql);
 

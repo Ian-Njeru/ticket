@@ -2,11 +2,11 @@
 
 include "./../autoload/autoloader.php";
     $tickets = new ticket();
-
     if(isset($_POST['submit'])){
         $subject = $_POST['subject'];
         $description =$_POST['description'];
         $uploadDir = "img/";
+        $created_by = $_SESSION['user_id'];
         foreach ($_FILES['images']['name'] as $key => $name) {
             $tmp_name = $_FILES['images']['tmp_name'][$key];
             $error = $_FILES['images']['error'][$key];
@@ -18,7 +18,7 @@ include "./../autoload/autoloader.php";
 
                 if (move_uploaded_file($tmp_name, $filePath)) {
 
-                        $result = $tickets->ticket($subject, $description, $filePath);
+                        $result = $tickets->ticket($subject, $description, $filePath, $created_by);
                     
                             if($result['status']==true){
                                 $_SESSION['success'] = $result['message'];
