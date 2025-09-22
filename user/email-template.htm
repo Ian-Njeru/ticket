@@ -12,8 +12,9 @@
     <form action="" method="get">
     <P>Dear <?php echo $name ?>
     <p>Click this link to verify your account 
-        <a href="http://localhost/ticket/user/verification.php?verification_code =<?php echo $verification_code ?>">Click to verify</a>
-     . If you did not initiate this process, ignore this email</p>
+        <a href="http://localhost/ticket/user/verification?verification_code=<?php echo $verification_code ?>&name=<?php echo $name?>&id=<?php echo $id?>">Click to verify</a>.
+        This link expires after <b>30 MINUTES
+     . </p><p>If you did not initiate this process, ignore this email</p>
      </form>
 </body>
 </html>
