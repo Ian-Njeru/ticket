@@ -92,7 +92,15 @@
                         <tr>
                             <td><?php echo $email; ?></td>
                             <td><?php echo $password;?></td>
-                            <td><div class="status"><input type="submit" value="<?php echo $status;?>" name="verify" class="verify"></div></td>
+                            <td><div class="<?php echo $status;?>">
+                                <?php
+                                if($status == 'unverified'){
+                                    ?><p class="<?php echo $status;?>"><input type="submit" value="<?php echo $status;?>" name="verify" class="<?php echo $status;?>"></p>
+                                <?php }
+                                else{ ?>
+                                <p class="<?php echo $status;?>"><?php echo $status;?></p>
+                                <?php } ?>
+                            </div></td>
                             <td><i class="fa fa-cog" id="action"></i>
                                 <div class="actionModal">
                                     <div class="action">
@@ -100,7 +108,7 @@
                                             <span class="close_modal">&times;</span>
                                         </div>
 
-                                        <div class="header">
+                                        <div class="Actionheader">
                                             <h2>Select Action to do</h2>
                                         </div>
 

@@ -94,6 +94,7 @@ input[type='email'], input[type='password']{
 input[type="password"]{
   margin: 10px;
 }
-.header{
+
+.Actionheader{
   padding-top: 20px;
 }
