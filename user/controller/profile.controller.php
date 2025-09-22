@@ -70,9 +70,17 @@ if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['verify'])){
     }
 }
 
+$result = $profile->checkVerificationCode($id);
+
+$name = $result['name'];
+$id= $result['id'];
+$verification_code = $result['verification_code'];
+$email = $result['email'];
+
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['online_status'])){
     $onlineStatus = $_POST['online_status'];
     $delete = $profile->delete($id, $onlineStatus);
     
 }
+
 ?>

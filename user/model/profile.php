@@ -106,6 +106,25 @@ class profile extends connection {
         }
     }
 
+    public function checkVerificationCode($id){
+        $stmt = "SELECT * FROM customer_login WHERE id = '$id'";  
+        $query = $this->connection->query($stmt);
+
+        if($query->num_rows == 1){
+            $row = $query->fetch_assoc();
+            $name = $row['name'];
+            $id=$row['id'];
+            $email = $row['email'];
+            $verification_code = $row['verification_code'];
+
+            return [
+                'id'=>$id,
+                'name'=>$name,
+                'email'=>$email,
+                'verification_code'=>$verification_code
+            ];
+        }
+    }
     public function delete($id, $onlineStatus){
         $stmt = "UPDATE customer_login SET customer_login.online_status = '$onlineStatus' WHERE customer_login.id =$id ";
         $query = $this->connection->query($stmt);
