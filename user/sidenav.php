@@ -21,10 +21,10 @@
                 <div class="dashboard-name">Profile</div>
             </a>
             
-            <a href="./activity" class="navigation" id="activity">
+            <!--<a href="./activity" class="navigation" id="activity">
                 <div class="icon"><i class="fa fa-clock-rotate-left"></i></div>
                 <div class="dashboard-name">Activity</div>
-            </a>
+            </a>!-->
     </div>
 
     <div class="footer">

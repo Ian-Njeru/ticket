@@ -14,10 +14,17 @@ body{
     flex-wrap: wrap;
 }
 
+.body{
+    display:flex;
+}/**/
+
+.profile-details{
+    display:column;
+}
+
 .body, .profile-details{
     margin-top: 50px;
     padding-left: 20px;
     padding-right: 25px;
-    display:column;
     flex: 80%;
-}/**/
+}

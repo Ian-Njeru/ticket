@@ -1,0 +1,22 @@
+#details-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-family:  Courier New;
+  text-align: center;
+}
+
+.incidentId, .date{
+  padding:5px;
+  margin: 2px;
+}
+
+.active input[type="text"]{
+  border: 1px solid #cccccc !important;
+  cursor: not-allowed !important;
+  color: #6d6d6d !important;
+  pointer-events: none !important;
+}
+

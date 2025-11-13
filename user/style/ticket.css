@@ -46,7 +46,7 @@ input[type="file"] {
 }
 
 
-input[type="submit"] {
+input[type="submit"], #okButton {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #4f8cff;
@@ -57,7 +57,12 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+#okButton{
+  width: auto;
+  height: 50px;
+}
+
+input[type="submit"]:hover, #okButton:hover {
   background-color: #4f8cff;
 }
 
@@ -70,4 +75,13 @@ input[type="reset"]{
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
+}
+
+
+.showTicketDetails.active {
+  
+  flex: 25%;
+  padding: 20px;
+  opacity: 1;
+  overflow: hidden;
 }
